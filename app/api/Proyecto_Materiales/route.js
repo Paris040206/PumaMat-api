@@ -14,7 +14,7 @@ export async function GET() {
         const pool = await getConnection();
 
         const resultado = await pool.request().query(
-             'SELECT id_material, formula, microestructura, id_staging, id_estructura, id_metodo, id_fuente FROM dbo.Material ORDER BY id_material'
+             'SELECT id_material, formula, microestructura, id_staging, id_estructura, id_metodo, id_fuente FROM dbo.Material ORDER BY id_material DESC'
             //'SELECT m.id_material, m.formula, m.microestructura, m.id_estructura, m.id_fuente, mp.id_metodo, mp.nombre_metodo FROM dbo.Material m INNER JOIN dbo.Metodo_Procesamiento mp ON m.id_metodo = mp.id_metodo ORDER BY m.id_material desc'
         );
 
